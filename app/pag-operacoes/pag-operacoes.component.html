@@ -1,0 +1,27 @@
+<!-- página de entrada da aplicação, contém os 3 inputs de busca: busca pelo código do cliente, busca pelo número da operação e busca pelas informações da conta = o resultado dessa busca vai ser o componente da tabela -->
+
+<form [formGroup]="buscaForm">
+
+<div class="procurar">
+  <input type="text" placeholder="código do cliente" formControlName="codigoCliente"
+  (focus)="codigoCliente()" (blur)="habilitarCampos()">
+  <button>Procurar</button>
+  <!-- [buscar]="'codigoCliente'" -->
+
+  <input type="text" placeholder="número da operação" formControlName="numeroOperacao"
+  (focus)="numeroOperacao()" (blur)="habilitarCampos()">
+  <button>Procurar</button>
+  <!-- [buscar]="'numeroOperacao'" -->
+
+  <input type="text" placeholder="informações da conta" formControlName="infosConta"
+  (focus)="infosConta()" (blur)="habilitarCampos()">
+  <button>Procurar</button>
+  <!--  [buscar]="'infosConta'" -->
+</div>
+
+</form>
+
+
+<app-filtro-operacoes></app-filtro-operacoes>
+
+<app-tabela-operacoes></app-tabela-operacoes>
